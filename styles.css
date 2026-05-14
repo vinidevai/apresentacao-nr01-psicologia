@@ -1,6 +1,6 @@
 /* ============================================
    Paleta de cores
-   #F0E4E4 - creme claro (bg claro / texto em bg escuro)
+   #EDECDE - creme claro (bg claro / texto em bg escuro)
    #F29D52 - laranja (destaque)
    #592404 - marrom escuro (bg escuro)
    #8C6954 - marrom médio
@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;900&display=swap');
 
 :root {
-  --c-creme: #F0E4E4;
+  --c-creme: #EDECDE;
   --c-laranja: #F29D52;
   --c-marrom-escuro: #592404;
   --c-marrom-medio: #8C6954;
@@ -146,14 +146,17 @@
 }
 
 .numero-topico {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--c-laranja);
   color: var(--c-marrom-escuro);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 0.9em;
-  padding: 0.15em 0.7em;
-  border-radius: 6px;
+  font-size: 0.85em;
+  line-height: 1;
+  padding: 0.45em 0.8em;
+  border-radius: 8px;
   margin-bottom: 0.5em;
 }
 
@@ -430,25 +433,28 @@
 /* ========== FLUXOGRAMA ========== */
 .fluxograma {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: stretch;
-  gap: 0.3em;
+  gap: 0.25em;
   margin: 1.2em 0;
+  width: 100%;
 }
 
 .fluxo-step {
   background: white;
   border: 3px solid var(--c-laranja);
   border-radius: 14px;
-  padding: 0.7em 0.7em;
-  min-width: 130px;
+  padding: 0.7em 0.5em;
+  flex: 1 1 0;
+  min-width: 0;
   max-width: 150px;
   text-align: center;
   box-shadow: 0 6px 16px rgba(89, 36, 4, 0.15);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .fluxo-step.fluxo-final {
@@ -456,32 +462,46 @@
   border-color: var(--c-marrom-escuro);
 }
 
-.fluxo-step.fluxo-final .fluxo-label,
-.fluxo-step.fluxo-final .fluxo-icon {
+.fluxo-step.fluxo-final .fluxo-label {
   color: var(--c-creme);
 }
 
-.fluxo-icon {
-  font-size: 1.4em;
+.fluxo-num {
+  width: 1.9em;
+  height: 1.9em;
+  border-radius: 50%;
+  border: 2px solid var(--c-laranja);
   color: var(--c-laranja);
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  margin-bottom: 0.2em;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  margin-bottom: 0.4em;
+  background: white;
+}
+
+.fluxo-step.fluxo-final .fluxo-num {
+  border-color: var(--c-laranja);
+  color: var(--c-laranja);
+  background: var(--c-marrom-escuro);
 }
 
 .fluxo-label {
   color: var(--c-marrom-escuro);
   font-weight: 700;
-  font-size: 0.72em;
+  font-size: 0.68em;
   line-height: 1.2;
 }
 
 .fluxo-sub {
   color: var(--c-marrom-medio);
-  font-size: 0.55em;
+  font-size: 0.52em;
   font-style: italic;
   margin-top: 0.25em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .fluxo-step.fluxo-final .fluxo-sub {
@@ -490,10 +510,12 @@
 
 .fluxo-arrow {
   color: var(--c-laranja);
-  font-size: 1.6em;
+  font-size: 2em;
   font-weight: 900;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 /* ========== TABELA ========== */
@@ -505,8 +527,9 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(89, 36, 4, 0.18);
+  box-shadow: 0 8px 24px rgba(89, 36, 4, 0.22);
   font-size: 0.68em;
+  border: 2px solid var(--c-marrom-escuro);
 }
 
 .tabela-elegante thead {
@@ -515,7 +538,7 @@
 
 .tabela-elegante thead th {
   color: var(--c-creme);
-  padding: 0.8em 1em;
+  padding: 0.85em 1em;
   text-align: left;
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -523,12 +546,16 @@
   border-bottom: 4px solid var(--c-laranja);
 }
 
+.tabela-elegante thead th + th {
+  border-left: 2px solid var(--c-laranja);
+}
+
 .tabela-elegante tbody td {
-  padding: 0.8em 1em;
+  padding: 0.85em 1.1em;
   color: var(--c-preto);
   line-height: 1.5;
   vertical-align: top;
-  border-bottom: 1px solid rgba(89, 36, 4, 0.1);
+  border-bottom: 2px solid var(--c-marrom-medio);
 }
 
 .tabela-elegante tbody tr:last-child td {
@@ -536,7 +563,7 @@
 }
 
 .tabela-elegante tbody tr:nth-child(even) {
-  background: rgba(240, 228, 228, 0.5);
+  background: rgba(140, 105, 84, 0.12);
 }
 
 .tabela-elegante td:first-child {
