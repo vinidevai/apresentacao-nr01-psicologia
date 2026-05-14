@@ -349,25 +349,13 @@
 .citacao-box {
   background: var(--c-marrom-medio);
   color: var(--c-creme);
-  padding: 1em 1.3em 1em 2.2em;
+  padding: 1em 1.3em;
   border-radius: 12px;
   font-style: italic;
   font-size: 0.78em;
   line-height: 1.55;
   margin: 0.6em 0;
-  position: relative;
-}
-
-.citacao-box::before {
-  content: '"';
-  position: absolute;
-  top: -0.15em;
-  left: 0.25em;
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5em;
-  color: var(--c-laranja);
-  opacity: 0.7;
-  line-height: 1;
+  border-left: 6px solid var(--c-laranja);
 }
 
 .citacao-box strong {
@@ -575,14 +563,20 @@
   color: var(--c-marrom-escuro);
 }
 
+.tabela-elegante strong.col-destaque {
+  color: var(--c-marrom-escuro);
+  font-weight: 700;
+  font-size: 1.08em;
+}
+
 /* ========== CONCLUSÃO ========== */
 .conclusao {
   text-align: center;
-  color: var(--c-creme);
+  color: var(--c-preto);
 }
 
 .conclusao-titulo {
-  color: var(--c-laranja) !important;
+  color: var(--c-marrom-escuro) !important;
   font-size: 2em !important;
   border: none !important;
   display: block !important;
@@ -590,7 +584,7 @@
 }
 
 .conclusao-texto {
-  color: var(--c-creme) !important;
+  color: var(--c-preto) !important;
   font-size: 0.85em;
   max-width: 900px;
   margin: 0.5em auto;
@@ -598,14 +592,14 @@
 }
 
 .conclusao-texto strong {
-  color: var(--c-laranja);
+  color: var(--c-marrom-escuro);
 }
 
 .citacao-final {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.2em;
-  color: var(--c-laranja);
+  color: var(--c-marrom-escuro);
   max-width: 900px;
   margin: 1em auto;
   padding: 1em;
