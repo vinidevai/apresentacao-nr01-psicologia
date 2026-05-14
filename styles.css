@@ -680,6 +680,9 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4em;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .qr-header {
