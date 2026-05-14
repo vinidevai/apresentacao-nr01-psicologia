@@ -23,6 +23,11 @@
   font-size: 22px;
 }
 
+.reveal strong,
+.reveal b {
+  font-weight: 700;
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3 {
@@ -361,6 +366,19 @@
 .citacao-box strong {
   color: var(--c-laranja);
   font-style: normal;
+}
+
+.citacao-box .aspa {
+  color: var(--c-laranja);
+  font-weight: 700;
+}
+
+.citacao-box .aspa:first-child {
+  margin-right: 0.18em;
+}
+
+.citacao-box .aspa:last-child {
+  margin-left: 0.18em;
 }
 
 /* ========== CARDS GRANDES ========== */
